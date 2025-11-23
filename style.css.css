@@ -1,0 +1,107 @@
+/*
+    CSS Effects ( comment):
+    - Image: I used a transition on transform and box-shadow so the image smoothly zooms in 
+      and gets a shadow when the mouse hovers over it.
+    - Button: I used a keyframe animation to make the button "wiggle" when the mouse hovers,
+      so it has a different effect than the image.
+*/
+
+/* Basic page styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #222;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Image effect (transition / zoom) */
+.image-effect {
+    display: block;
+    max-width: 100%;
+    width: 320px;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* On hover, image zooms slightly and gets a stronger shadow */
+.image-effect:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* 2. Button effect (wiggle animation) */
+.btn-effect {
+    margin-top: 10px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 999px;
+    background-color: #0077cc;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+/* Keyframes for wiggle animation */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* On hover, button wiggles once */
+.btn-effect:hover {
+    animation: wiggle 0.35s ease-in-out;
+}
+
+/* 3. Zara link with hover color #FFA500 */
+.zara-link {
+    color: #005599;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover state MUST be #FFA500 as required */
+.zara-link:hover {
+    color: #FFA500;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+}
